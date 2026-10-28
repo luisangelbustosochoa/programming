@@ -1,0 +1,169 @@
+
+\documentclass[aspectratio=169,11pt,english]{beamer}
+
+% =========================================================
+% THEME AND COLORS — Python-inspired visual identity
+% =========================================================
+\usetheme{Berkeley}
+\usecolortheme{default}
+
+\definecolor{PythonBlue}{HTML}{306998}
+\definecolor{PythonYellow}{HTML}{FFD43B}
+\definecolor{DeepNavy}{HTML}{14213D}
+\definecolor{SoftWhite}{HTML}{F7F9FC}
+\definecolor{CodeGreen}{HTML}{2A9D8F}
+
+\setbeamercolor{structure}{fg=PythonBlue}
+\setbeamercolor{palette primary}{bg=DeepNavy,fg=white}
+\setbeamercolor{palette secondary}{bg=PythonBlue,fg=white}
+\setbeamercolor{palette tertiary}{bg=DeepNavy,fg=white}
+\setbeamercolor{palette quaternary}{bg=PythonBlue,fg=white}
+\setbeamercolor{title}{fg=white,bg=DeepNavy}
+\setbeamercolor{frametitle}{fg=white,bg=DeepNavy}
+\setbeamercolor{block title}{fg=white,bg=PythonBlue}
+\setbeamercolor{block body}{fg=DeepNavy,bg=SoftWhite}
+\setbeamercolor{alerted text}{fg=PythonBlue}
+\setbeamercolor{normal text}{fg=DeepNavy,bg=white}
+\setbeamercolor{item}{fg=PythonBlue}
+\setbeamercolor{section in toc}{fg=PythonBlue}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[triangle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% =========================================================
+% PACKAGES
+% =========================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% =========================================================
+% PYTHON CODE STYLE
+% =========================================================
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{PythonBlue}\bfseries,
+	stringstyle=\color{CodeGreen},
+	commentstyle=\color{gray}\itshape,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	rulecolor=\color{PythonBlue!25},
+	backgroundcolor=\color{SoftWhite},
+	tabsize=4,
+	keepspaces=true,
+	columns=fullflexible
+}
+\lstset{style=pythonstyle}
+
+% =========================================================
+% PRESENTATION METADATA
+% =========================================================
+\title[Introduction to programming]{Fundamentals}
+\subtitle{-}
+\author{Luis Ángel Bustos Ochoa}
+\institute{Applied Physics \,|\, Course:}
+\date{\today}
+
+% =========================================================
+% DOCUMENT
+% Exactly two frames: title + today's roadmap
+% =========================================================
+\begin{document}
+	
+	% ---------------------------------------------------------
+	% FRAME 1 — TITLE PAGE
+	% ---------------------------------------------------------
+	{
+		\setbeamercolor{background canvas}{bg=DeepNavy}
+		\begin{frame}[plain]
+			\centering
+			\vspace{0.7cm}
+			
+			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
+			
+			\vspace{0.65cm}
+			
+			{\color{white}\Huge\bfseries Introduction To Programming\par}
+			
+			\vspace{0.35cm}
+			
+			{\color{PythonYellow}\Large Python fundamentals\par}
+			
+			\vspace{0.8cm}
+			
+			\begin{tikzpicture}
+				\node[
+				rounded corners=8pt,
+				fill=white,
+				text=PythonBlue,
+				inner sep=14pt
+				] {
+					\begin{minipage}{0.58\textwidth}
+						\centering
+						\ttfamily\Large
+						Universidad...
+					\end{minipage}
+				};
+			\end{tikzpicture}
+			
+			\vfill
+			
+			{\color{white}\large Luis Ángel Bustos Ochoa\par}
+			\vspace{0.15cm}
+			{\color{white!75}\normalsize Applied Physics \textbar{} Course: \par}
+			
+			\vspace{0.55cm}
+			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
+			
+			\vspace{0.35cm}
+			{\color{white!70}\small\insertdate\par}
+		\end{frame}
+	}
+	
+	% ---------------------------------------------------------
+	% FRAME 2 — WHAT WE WILL LEARN TODAY
+	% ---------------------------------------------------------
+	\begin{frame}{Today...}
+		\framesubtitle{Introduction to the course:\_}
+		
+		\begin{block}{Today's learning goals}
+			By the end of this session, you will be able to:
+		\end{block}
+		
+		\begin{enumerate}
+			\item Explain what a program is and how an algorithm solves a problem.
+			\item Identify the input, process, and output of a simple problem.
+			\item Run a basic Python instruction using \texttt{print()}.
+			\item Predict a program's output before executing the code.
+			\item Modify a short program and explain what changes.
+		\end{enumerate}
+		
+		\vspace{0.35cm}
+		
+		\begin{alertblock}{Our guiding question}
+			How can we turn a problem into precise instructions a computer can execute?
+		\end{alertblock}
+		
+		\vfill
+		
+		{\footnotesize\color{gray}
+			Approach: predict, run, observe, explain.}
+	\end{frame}
+	
+\end{document}
