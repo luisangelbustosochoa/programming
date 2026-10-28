@@ -1,4 +1,3 @@
-
 \documentclass[aspectratio=169,11pt,english]{beamer}
 
 % =========================================================
@@ -30,6 +29,9 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{items}[triangle]
 \setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Configuración para que el contenido oculto sea completamente invisible
+\setbeamercovered{invisible}
 
 % =========================================================
 % PACKAGES
@@ -72,98 +74,115 @@
 \lstset{style=pythonstyle}
 
 % =========================================================
-% PRESENTATION METADATA
+% PRESENTATION METADATA (Afecta a la barra lateral)
 % =========================================================
-\title[Introduction to programming]{Fundamentals}
-\subtitle{-}
-\author{Luis Ángel Bustos Ochoa}
-\institute{Applied Physics \,|\, Course:}
+\title[CLASS 1.]{Introduction to Programming}
+\subtitle{Python Fundamentals}
+\author[ ]{Luis Ángel Bustos Ochoa}
+\institute{Applied Physics}
 \date{\today}
 
 % =========================================================
 % DOCUMENT
-% Exactly two frames: title + today's roadmap
 % =========================================================
 \begin{document}
 	
 	% ---------------------------------------------------------
-	% FRAME 1 — TITLE PAGE
+	% FRAME 1 — TITLE PAGE (Adaptada al Sidebar de Berkeley)
 	% ---------------------------------------------------------
-	{
-		\setbeamercolor{background canvas}{bg=DeepNavy}
-		\begin{frame}[plain]
-			\centering
-			\vspace{0.7cm}
-			
-			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
-			
-			\vspace{0.65cm}
-			
-			{\color{white}\Huge\bfseries Introduction To Programming\par}
-			
-			\vspace{0.35cm}
-			
-			{\color{PythonYellow}\Large Python fundamentals\par}
-			
-			\vspace{0.8cm}
-			
-			\begin{tikzpicture}
-				\node[
-				rounded corners=8pt,
-				fill=white,
-				text=PythonBlue,
-				inner sep=14pt
-				] {
-					\begin{minipage}{0.58\textwidth}
-						\centering
-						\ttfamily\Large
-						Universidad...
-					\end{minipage}
-				};
-			\end{tikzpicture}
-			
-			\vfill
-			
-			{\color{white}\large Luis Ángel Bustos Ochoa\par}
-			\vspace{0.15cm}
-			{\color{white!75}\normalsize Applied Physics \textbar{} Course: \par}
-			
-			\vspace{0.55cm}
-			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
-			
-			\vspace{0.35cm}
-			{\color{white!70}\small\insertdate\par}
-		\end{frame}
-	}
-	
-	% ---------------------------------------------------------
-	% FRAME 2 — WHAT WE WILL LEARN TODAY
-	% ---------------------------------------------------------
-	\begin{frame}{Today...}
-		\framesubtitle{Introduction to the course:\_}
+{
+	\setbeamercolor{background canvas}{bg=DeepNavy}
+	\begin{frame}[plain]
+		\centering
+		\vspace{0.7cm}
 		
-		\begin{block}{Today's learning goals}
-			By the end of this session, you will be able to:
-		\end{block}
+		{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
 		
-		\begin{enumerate}
-			\item Explain what a program is and how an algorithm solves a problem.
-			\item Identify the input, process, and output of a simple problem.
-			\item Run a basic Python instruction using \texttt{print()}.
-			\item Predict a program's output before executing the code.
-			\item Modify a short program and explain what changes.
-		\end{enumerate}
+		\vspace{0.65cm}
+		
+		{\color{white}\Huge\bfseries Introduction To Programming\par}
 		
 		\vspace{0.35cm}
 		
-		\begin{alertblock}{Our guiding question}
-			How can we turn a problem into precise instructions a computer can execute?
-		\end{alertblock}
+		{\color{PythonYellow}\Large Python fundamentals\par}
+		
+		\vspace{0.8cm}
+		
+		\begin{tikzpicture}
+			\node[
+			rounded corners=8pt,
+			fill=white,
+			text=PythonBlue,
+			inner sep=14pt
+			] {
+				\begin{minipage}{0.58\textwidth}
+					\centering
+					\ttfamily\Large
+					Universidad...
+				\end{minipage}
+			};
+		\end{tikzpicture}
 		
 		\vfill
 		
-		{\footnotesize\color{gray}
-			Approach: predict, run, observe, explain.}
+		{\color{white}\large Luis Ángel Bustos Ochoa\par}
+		\vspace{0.15cm}
+		{\color{white!75}\normalsize Applied Physics \textbar{} Course: \par}
+		
+		\vspace{0.55cm}
+		{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
+		
+		\vspace{0.35cm}
+		{\color{white!70}\small\insertdate\par}
+	\end{frame}
+}	
+	% =========================================================
+	% SECCIÓN 1: El Roadmap o Índice
+	% =========================================================
+	\section{Roadmap}
+	
+	% FRAME 2 — WHAT WE WILL LEARN TODAY
+	\begin{frame}{Today...}
+		\framesubtitle{Introduction to the course}
+		
+		{\large
+			\begin{enumerate}
+				\item Course info.
+				\item Brief Introduction to a Computer Machine.
+				\item Fundamentals.
+				\item What a program is and how an algorithm solves a problem.
+			\end{enumerate}
+		}
+	\end{frame}
+	
+	% =========================================================
+	% SECCIÓN 2: Introducción a la máquina y la información
+	% =========================================================
+	\section{Brief Introduction...}
+	
+	% FRAME 3 — THE IMPORTANCE OF TWO
+	\begin{frame}{The importance of two}
+		\framesubtitle{Introduction}
+		\begin{itemize}
+			\item We need at least two cables to complete a circuit.
+			\pause
+			\item We need a sender and a receiver to establish any form of conversation.
+			\pause
+			\item We only need two distinct states to describe and build a complete communication system.
+		\end{itemize}
+		
+		\vspace{0.5em}
+		\pause
+		The number 2 represents the fundamental minimum base for the existence and measurement of information.
+		
+		\vspace{0.5em}
+		\pause
+		Therefore, the number 2 is the absolute minimum required to build a complete arithmetic system.
+	\end{frame}
+	
+	% FRAME 4 — COMPUTER MACHINE
+	\begin{frame}{Computer Machine}
+		When you press the start button of your computer, this one sends voltage to your hardware; first the CPU (central processing unit) "activates the kernel" (instructions stored in your memory that depend on your Operating System), making millions of operations only to show you something on your screen.
 	\end{frame}
 	
 \end{document}
