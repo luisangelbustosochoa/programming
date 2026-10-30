@@ -1,0 +1,192 @@
+\documentclass[aspectratio=169,19pt,english]{beamer}
+
+% =========================================================
+\usetheme{Berkeley}
+\usecolortheme{default}
+
+\definecolor{PythonBlue}{HTML}{306998}
+\definecolor{PythonYellow}{HTML}{FFD43B}
+\definecolor{DeepNavy}{HTML}{14213D}
+\definecolor{SoftWhite}{HTML}{F7F9FC}
+\definecolor{CodeGreen}{HTML}{2A9D8F}
+
+\setbeamercolor{structure}{fg=PythonBlue}
+\setbeamercolor{palette primary}{bg=DeepNavy,fg=white}
+\setbeamercolor{palette secondary}{bg=PythonBlue,fg=white}
+\setbeamercolor{palette tertiary}{bg=DeepNavy,fg=white}
+\setbeamercolor{palette quaternary}{bg=PythonBlue,fg=white}
+\setbeamercolor{title}{fg=white,bg=DeepNavy}
+\setbeamercolor{frametitle}{fg=white,bg=DeepNavy}
+\setbeamercolor{block title}{fg=white,bg=PythonBlue}
+\setbeamercolor{block body}{fg=DeepNavy,bg=SoftWhite}
+\setbeamercolor{alerted text}{fg=PythonBlue}
+\setbeamercolor{normal text}{fg=DeepNavy,bg=white}
+\setbeamercolor{item}{fg=PythonBlue}
+\setbeamercolor{section in toc}{fg=PythonBlue}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[triangle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+
+\setbeamercovered{invisible}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{listings}
+% =========================================================
+% PYTHON CODE STYLE
+% =========================================================
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{PythonBlue}\bfseries,
+	stringstyle=\color{CodeGreen},
+	commentstyle=\color{gray}\itshape,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	rulecolor=\color{PythonBlue!25},
+	backgroundcolor=\color{SoftWhite},
+	tabsize=4,
+	keepspaces=true,
+	columns=fullflexible
+}
+\lstset{style=pythonstyle}
+
+% =========================================================
+% metadata
+% =========================================================
+\title[CLASS 2.]{Introduction to Programming}
+\subtitle{Python Fundamentals}
+\author[ ]{Luis Ángel Bustos Ochoa}
+\institute{Applied Physics}
+\date{\today}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+\begin{document}
+	
+	% ---------------------------------------------------------
+	% FRAME 1 — TITLE PAGE  ---------------------------------------------------------
+	{
+		\setbeamercolor{background canvas}{bg=DeepNavy}
+		\begin{frame}[plain]
+			\centering
+			\vspace{0.7cm}
+			
+			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
+			
+			\vspace{0.65cm}
+			
+			{\color{white}\Huge\bfseries Introduction To Programming\par}
+			
+			\vspace{0.35cm}
+			
+			{\color{PythonYellow}\Large Python fundamentals\par}
+			
+			\vspace{0.8cm}
+			
+			\begin{tikzpicture}
+				\node[
+				rounded corners=8pt,
+				fill=white,
+				text=PythonBlue,
+				inner sep=14pt
+				] {
+					\begin{minipage}{0.58\textwidth}
+						\centering
+						\ttfamily\Large
+						Universidad...
+					\end{minipage}
+				};
+			\end{tikzpicture}
+			
+			\vfill
+			
+			{\color{white}\large Luis Ángel Bustos Ochoa\par}
+			\vspace{0.15cm}
+			{\color{white!75}\normalsize Class 2 \textbar{} Course: \par}
+			
+			\vspace{0.55cm}
+			{\color{PythonYellow}\rule{0.22\textwidth}{2pt}}
+			
+			\vspace{0.35cm}
+			{\color{white!70}\small\insertdate\par}
+		\end{frame}
+	}	
+	%
+	\section{Fundamentals}
+{\Large
+	\begin{frame}{Today's Goals}
+
+		\begin{itemize}
+			\item[--] Fundamentals 
+			%\item Algorithms 
+			\item[--] Type of Variables 
+			\item[--] Your first program 
+			
+		\end{itemize}
+	\end{frame}
+
+\begin{frame}{Fundamentals}
+  \textbf{Computers are obedient, not smart}. They do exactly what you tell them to do, word for word, step by step—even if your instructions lead to a error.\\
+  An \textbf{algorithm} is a precise, step-by-step set of instructions designed to solve a specific problem or complete a task. 
+\end{frame}
+
+\begin{frame}{Fundamentals}
+	\framesubtitle{Computers Do What You Tell Them.}
+	Think a computer of a kitchen assistant.If you tell it to "cook a complex dish". It will freeze because it doesn't know what that means. But if you give it a step-by-step recipe like: "chop 5 tomatoes, blend for 10 seconds, add 2 grams of salt", it will do it very quickly; because it moves at millions of operations per second.
+	
+	
+\end{frame}
+\begin{frame}{You Should Be Familiar With...}
+	\framesubtitle{The Concept Of: }
+	\begin{itemize}[label=$\diamond$]
+		\item Variable 
+		\item True/false statements
+		\item Connecting statements (or,and, not)
+		\item Making decisions (if ... then)
+		\item Following flowcharts 
+	\end{itemize}
+	
+\end{frame}
+\begin{frame}{If you shouldn't be familiar with the Flowcharts}
+	\framesubtitle{You should be familiar with following a set of instructions and making branching desicions.}
+	\begin{figure}
+		\centering
+		\includegraphics[width=6.9cm, height=6.55cm]{diagram.png}
+	
+	\end{figure}
+	
+\end{frame}
+\begin{frame}{The structured program theorem}
+	\framesubtitle{States that any computable algorithm can be expressed only with three logic control structures.}
+\begin{itemize}[label=$\circ$]
+	\item Sequence or simple action: Executing one instruction after another in a specific, linear order.
+	\item Conditional: valuating a boolean condition to "choose the correct path".
+	\item Loop or iteration: Repeating a block of instructions as long as a certain condition remains true.
+\end{itemize}
+\end{frame}
+\section{Variables}
+}
+\end{document}
