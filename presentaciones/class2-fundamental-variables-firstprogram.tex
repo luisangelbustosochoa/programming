@@ -23,7 +23,11 @@
 \setbeamercolor{normal text}{fg=DeepNavy,bg=white}
 \setbeamercolor{item}{fg=PythonBlue}
 \setbeamercolor{section in toc}{fg=PythonBlue}
+\setbeamercolor{bloqueder}{bg=red!20, fg=black}
+\setbeamercolor{bloquetitder}{bg=red, fg=white}
 
+\setbeamercolor{bloqueizq}{bg=blue!20, fg=black}
+\setbeamercolor{bloquetitizq}{bg=blue, fg=white}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{items}[triangle]
 \setbeamertemplate{blocks}[rounded][shadow=false]
@@ -188,5 +192,54 @@
 \end{itemize}
 \end{frame}
 \section{Variables}
+\begin{frame}{Variables}
+	The \texttt{=} operator executes a \textbf{right-to-left assignment} (evaluating the right side first, then binding to the left name), not an algebraic equivalence.
+	\vspace{0.1cm}
+	
+	\begin{columns}[t]
+		% LEFT COLUMN (RED - MISTAKES & INVALID PATTERNS)
+		\begin{column}{0.48\textwidth}
+			\setbeamercolor{block title}{use=bloquetitder, bg=bloquetitder.bg, fg=bloquetitder.fg}
+			\setbeamercolor{block body}{use=bloqueder, bg=bloqueder.bg, fg=bloqueder.fg}
+			\begin{block}{❌ Pitfalls \& Invalid Code}
+				\begin{itemize}
+					\small{
+					\item \textbf{Math equivalence}: Treating \texttt{=} as static math logic (\texttt{a + x = b} throws \texttt{SyntaxError}).
+					
+					\item \textbf{Syntax violations}: Starting with numbers (\texttt{1st = 5}), spaces, or overriding keywords (\texttt{print = 10}).
+					\item \textbf{Single-letter cryptics}: Using \texttt{x}, \texttt{t}, \texttt{p} without domain context.}
+				\end{itemize}
+			\end{block}
+		\end{column}
+		
+		% RIGHT COLUMN (BLUE - MECHANISMS & CLEAN CODE)
+		\begin{column}{0.48\textwidth}
+			\setbeamercolor{block title}{use=bloquetitizq, bg=bloquetitizq.bg, fg=bloquetitizq.fg}
+			\setbeamercolor{block body}{use=bloqueizq, bg=bloqueizq.bg, fg=bloqueizq.fg}
+			\begin{block}{✔ Correct Model \& Standards}
+				
+				\begin{itemize}
+					\small{
+					\item \textbf{Right-to-left binding}: \texttt{x = x + 1} evaluates the new value first, then moves the name tag.
+					\item \textbf{Valid naming}: Letters or underscores (\texttt{\_}), case-sensitive (\texttt{age} $\neq$ \texttt{Age}).
+					\item \textbf{Style}: Descriptive \texttt{snake\_case} names (\texttt{circle\_area}), $<80$ chars/line.}
+				\end{itemize}
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Exercise}
+	\framesubtitle{"Allowed, Incorrect, Good Variables Names"}
+	\begin{enumerate}[label=\arabic*.-]
+	\item customer\_list 
+	\item print (where this word is a color other than black in Spyder) 
+	\item list\_of\_things\_I\_need\_to\_pick\_up\_from\_the\_store 
+	\item \%score 
+	\item 1 
+	\item A
+\end{enumerate}
+	
+\end{frame}
 }
 \end{document}
